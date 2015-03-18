@@ -19,6 +19,9 @@ void Operand::operator*(const Operand& O){
 void Operand::operator%(const Operand& O){
     assert("invalid operator % !");
 }
+void Operand::operatorDiv(const Operand& O){
+    assert("invalid operator Div !");
+}
 void Operand::operatornot(){
     assert("invalid operator not!");
 }
