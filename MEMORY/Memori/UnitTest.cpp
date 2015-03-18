@@ -20,21 +20,20 @@ int main(){
 				cin >> n;
 				memory.Redo(n);
 			} else if(input == "SHOWMEM"){
-				cout << "ShowMem Berapa kali?";
+				cout << "ShowMem Berapa kali?  ";
 				cin >> n;
 				memory.ShowMem(n);
 			} else if(input == "SHOWALL"){
 				cout << "ShowAll:" << endl;
 				memory.ShowAll();
 			} else if(input == "SAVE"){
-				cout << "Disimpan dimana?";
+				cout << "Disimpan dimana?  ";
 				cin >> input;
 				memory.Save(input);
 			} else if(input == "CLEAR"){
 				cout << "Memory cleared!" << endl;
 				memory.Clear();
 			} else{
-				cout << "Added to memory!" << endl;
 				memory.Add(input);
 			}
 		}
