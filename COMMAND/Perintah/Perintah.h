@@ -23,6 +23,7 @@ public:
 	//GETTER
 	string getEkspresi();
 	string getBilangan();
+	Memori& getMemori();
 
 private:
 	Memori memory;

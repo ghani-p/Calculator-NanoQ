@@ -29,5 +29,7 @@ int main(){
 	pre4.printEkspresi(); cout << " = "; pre4.printHasil(); cout << endl;
 	assert(pre4.getHasil()->getNilai() == 7);
 
+	cout << endl << "TEST IS SUCCESSFUL!" << endl;
+
 	return 0;
 }
