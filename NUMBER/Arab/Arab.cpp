@@ -8,6 +8,9 @@ Arab::Arab(){
     nilai=0;
 }
 Arab::Arab(string a){
+    for (int i = 0; i < a.length(); i++)
+        assert(a[i] >= '0' && a[i] <= '9');
+    
     nilai=atoi(a.c_str());
 }
 //dtor
