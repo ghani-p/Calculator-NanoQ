@@ -1,12 +1,5 @@
 /* File		: Postfix.cpp			*/
 /* Author	: Natan (13513070)	*/
-
-#include "../../NUMBER/Arab/Arab.h"
-#include "../../NUMBER/Logika/Logika.h"
-#include "../../NUMBER/Operand/Operand.h"
-#include "../../NUMBER/Romawi/Romawi.h"
-#include "../../COLLECTION/Stack/Stack.h"
-#include "../../COLLECTION/Vector/Vector.h"
 #include "Postfix.h"
 #include <iostream>
 #include <string>

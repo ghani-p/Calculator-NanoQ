@@ -1,9 +1,6 @@
 /* File		: Prefix.cpp			*/
 /* Author	: Natan (13513070)	*/
 #include "Prefix.h"
-#include "../../COLLECTION/Stack/Stack.h"
-#include "../../COLLECTION/Vector/Vector.h"
-#include "../Postfix/Postfix.h"
 #include <iostream>
 #include <string>
 

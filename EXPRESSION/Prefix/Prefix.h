@@ -5,6 +5,8 @@
 #define PREFIX_H
 
 #include "../Postfix/Postfix.h"
+#include "../../COLLECTION/Stack/Stack.h"
+#include "../../COLLECTION/Vector/Vector.h"
 #include <string>
 
 using namespace std;

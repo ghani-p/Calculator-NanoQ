@@ -3,7 +3,13 @@
 #pragma once
 #ifndef POSTFIX_H
 #define POSTFIX_H
+
+#include "../../NUMBER/Arab/Arab.h"
+#include "../../NUMBER/Logika/Logika.h"
 #include "../../NUMBER/Operand/Operand.h"
+#include "../../NUMBER/Romawi/Romawi.h"
+#include "../../COLLECTION/Stack/Stack.h"
+#include "../../COLLECTION/Vector/Vector.h"
 #include<string>
 
 using namespace std;

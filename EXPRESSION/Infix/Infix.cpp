@@ -1,9 +1,6 @@
 /* File		: Infix.cpp			*/
 /* Author	: Natan (13513070)	*/
 #include "Infix.h"
-#include "../Postfix/Postfix.h"
-#include "../../COLLECTION/Stack/Stack.h"
-#include "../../COLLECTION/Vector/Vector.h"
 #include <iostream>
 #include <string>
 

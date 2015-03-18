@@ -5,7 +5,9 @@
 #define INFIX_H
 
 #include "../Postfix/Postfix.h"
-#include<string>
+#include "../../COLLECTION/Stack/Stack.h"
+#include "../../COLLECTION/Vector/Vector.h"
+#include <string>
 
 using namespace std;
 /*! Sebuah kelas Infix turunan kelas Postfix */
