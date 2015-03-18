@@ -37,6 +37,13 @@ void Perintah::SAVE(string file){
 
 void Perintah::SETTING(){
 	string input = "";
+	//cout << "===========================" << endl;
+	cout << "List of Available Settings:" << endl;
+	cout << "    -Infix  │  Prefix  │  Postfix" << endl;
+	cout << "    -Arab   │  Logika  │  Romawi" << endl;
+	cout << "    -APPLY" << endl;
+	cout << "---------------------------" << endl;
+	
 	do {
 		if(input=="PREFIX" || input=="INFIX" || input=="POSTFIX"){
 			ekspresi = input;
