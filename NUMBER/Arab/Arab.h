@@ -7,27 +7,81 @@
 #include <stdlib.h>
 using namespace std;
 
+/*! Sebuah kelas Arab turunan dari kelas operand */
 class Arab: public Operand{
 public:
-    //CTOR
+    /**
+    *Konstruktor tanpa parameter
+    */
     Arab();
+    
+    /**
+    *Konstruktor dengan parameter
+    *I.S. string input berupa string representasi integer
+    *F.S. menyimpan kedalam variabel nilai nilai integer dari string yang di input
+    *@param a untuk parameter pertama
+    */
     Arab(string a);
-    //DTOR
+    
+    /**
+    *Destruktor
+    */
     virtual ~Arab();
-    //CCTOR
+    
+    /**
+    *Copy Konstruktor
+    *@param A untuk parameter pertama
+    */
     Arab(const Arab& A);
+    
+    /**
+    *Operator=
+    *@param L untuk parameter pertama
+    */
     Arab& operator=(const Arab& A);
-    //implements parent function
+    
+    /**
+    *fungsi prosedur penjumlahan override dari fungsi Operand
+    *@param A untuk parameter pertama
+    */
     virtual void operator+(const Operand& A);
+    
+    /**
+    *fungsi prosedur pengurangan override dari fungsi Operand
+    *@param A untuk parameter pertama
+    */
     virtual void operator-(const Operand& A);
+    
+    /**
+    *fungsi prosedur perkalian override dari fungsi Operand
+    *@param A untuk parameter pertama
+    */
     virtual void operator*(const Operand& A);
+    
+    /**
+    *fungsi prosedur pembagian override dari fungsi Operand
+    *@param A untuk parameter pertama
+    */
     virtual void operator/(const Operand& A);
+    
+    /**
+    *fungsi prosedur modulo override dari fungsi Operand
+    *@param A untuk parameter pertama
+    */
     virtual void operator%(const Operand& A);
-    //Setter & getter
+    
+    /**
+    *fungsi prosedur setter nilai
+    *@param n untuk parameter pertama
+    */
     virtual void setNilai(int n);
+    
+    /**
+    *fungsi prosedur setter nilai
+    */
     virtual int getNilai()const;
 protected:
-    int nilai;
+    int nilai; /*!< sebuah integer nilai */
 };
 
 #endif // ARAB_H_INCLUDED
