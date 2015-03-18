@@ -7,29 +7,63 @@
 #include<string>
 
 using namespace std;
-
+/*! Sebuah Kelas Postfix */
 class Postfix {
 protected:
-	string ekspresi; // ekspresi dalam bentuk postfix
-	string operandType; //tipe operand yang sedang dikenainya
-	Operand *hasil; //hasil '=' perhitungan
-	void Hitung(); //melakukan perhitungan berdasarkan ekspresi yang menghasilkan Operand hasil
+	string ekspresi; /*!ekspresi dalam bentuk postfix*/
+	string operandType; /*!tipe operand yang sedang dikenainya*/
+	Operand *hasil; /*!hasil '=' perhitungan*/
+	void Hitung(); /*!melakukan perhitungan berdasarkan ekspresi yang menghasilkan Operand hasil*/
 
 public:
-	Postfix(); //default ctor using operandType="Arab"
-	Postfix(string operandType); //ctor
-	Postfix(std::string _ekspresi, string operandType); //ctor
-	Postfix(const Postfix&); //cctor
-	Postfix& operator=(const Postfix&); //assign
-	virtual ~Postfix(); //dtor
+	/**
+    	*Konstruktor default dengan operandType="Arab""
+    	*/
+	Postfix(); 
+	/**
+    	*Copy Konstruktor
+    	*/
+	Postfix(string operandType); 
+	/**
+	* Konstruktor dengan parameter
+    	*@param _ekspresi untuk parameter pertama, operandType untuk parameter kedua
+    	*/
+	Postfix(std::string _ekspresi, string operandType);
+	/**
+	* Copy Konstruktor dengan parameter
+    	*/
+	Postfix(const Postfix&); 
+	/**
+	* operator=
+    	*/
+	Postfix& operator=(const Postfix&); 
+	/**
+	* Destruktor
+    	*/
+	virtual ~Postfix();
 
-	//GETTER
-	virtual string getEkspresi(); //mengembalikan string ekspresi
+	/**
+	* getter
+    	*mengembalikan string ekspresi
+    	*/
+	virtual string getEkspresi(); 
+	
+	/**
+	*getter
+    	*mengembalikan hasil operand
+    	*/
 	virtual Operand* getHasil();
 
-	//OUTPUT
-	virtual void printEkspresi(); //mencetak string ekspresi ke layar
-	virtual void printHasil(); //mencetak nilai Operand hasil ke layar
+	/**
+	*output
+    	*mencetak string ekspresi ke layar
+    	*/
+	virtual void printEkspresi(); 
+	/**
+	*output
+    	*mencetak nilai Operand hasil ke layar
+    	*/
+	virtual void printHasil(); 
 };
 
 #endif
