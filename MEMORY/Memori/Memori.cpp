@@ -21,7 +21,7 @@ Memori::Memori(const Memori& m){
 }
 
 Memori::~Memori(){
-	
+
 }
 
 void Memori::Undo(int n){
@@ -51,8 +51,8 @@ void Memori::Redo(int n){
 }
 
 void Memori::ShowMem(int n){
-	for (int i=UndoArray.size()-n; i<UndoArray.size(); i++){
-		cout << UndoArray[i] << endl;
+	for (int i=UndoArray.size()-n; i<UndoArray.size()+1; i++){
+		cout << UndoArray[i];
 	}
 }
 
