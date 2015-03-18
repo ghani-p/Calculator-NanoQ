@@ -3,7 +3,7 @@
 #pragma once
 #ifndef POSTFIX_H
 #define POSTFIX_H
-#include "../../NUMBER/Operand/operand.h"
+#include "../../NUMBER/Operand/Operand.h"
 #include<string>
 
 using namespace std;
