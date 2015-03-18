@@ -67,7 +67,7 @@ void Romawi::ConvertToArab(string R){
 
     }
     //postcondition
-    assert(Sum<3999);
+    assert((Sum<3999)&&(Sum>0));
     nilai=Sum;
 
 }
@@ -77,7 +77,7 @@ void Romawi::ConvertToRomawi(int A){
     string Roman[13]= {"I","IV","V","IX","X","XL","L","XC","C","CD","D","CM","M"};
     string Hasil= "";
     //precondition
-    assert(A<3999);
+    assert((A<3999)&&(A>0));
     while(A>0){
         if((A-value[CT])>=0){
             A-=value[CT];
