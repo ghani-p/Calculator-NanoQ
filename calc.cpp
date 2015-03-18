@@ -30,7 +30,18 @@ void strSplit(string in, char delimiter, Vector<string>& strings) {
 
 int main()
 {
-	cout << "WELCOME TO NanoQ Qalqulator" << endl;
+	cout << "\033c=============================" << endl;
+	cout << " Welcome to NanoQ Calculator" << endl;
+	cout << "=============================" << endl;
+	cout << "List of Available Commands:" << endl;
+	cout << "    -Undo <n>" << endl;
+	cout << "    -Redo <n>" << endl;
+	cout << "    -ShowMem <n>" << endl;
+	cout << "    -ShowAll" << endl;
+	cout << "    -Setting" << endl;
+	cout << "    -Save <file>" << endl;
+	cout << "    -Exit" << endl;
+	cout << "---------------------------" << endl;
 	Perintah cmd;
 	string s = "";
 	Vector<string> sp;
