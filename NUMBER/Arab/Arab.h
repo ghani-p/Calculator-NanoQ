@@ -71,6 +71,12 @@ public:
     virtual void operator%(const Operand& A);
     
     /**
+    *fungsi prosedur div override dari fungsi Operand
+    *@param A untuk parameter pertama
+    */
+    virtual void operatorDiv(const Operand& A);
+    
+    /**
     *fungsi prosedur setter nilai
     *@param n untuk parameter pertama
     */
