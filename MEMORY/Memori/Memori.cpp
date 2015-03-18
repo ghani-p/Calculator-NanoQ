@@ -27,8 +27,8 @@ Memori::~Memori(){
 void Memori::Undo(int n){
 	string val;
 	int x = n;
-	int y = UndoArray.size()-x+1;
-	for(int i=UndoArray.size()-1; i>=y; i--){
+	int y = UndoArray.size();
+	for(int i=UndoArray.size()-1; i>=y-x+1; i--){
 		if (isPerintah(UndoArray[i])){
 			x++;
 		}
@@ -41,8 +41,8 @@ void Memori::Undo(int n){
 void Memori::Redo(int n){
 	string val;
 	int x = n;
-	int y = RedoArray.size()-x+1;
-	for(int i=RedoArray.size()-1; i>=y; i--){
+	int y = RedoArray.size();
+	for(int i=RedoArray.size()-1; i>=y-x+1; i--){
 		if (isPerintah(RedoArray[i])){
 			x++;
 		}
@@ -53,8 +53,8 @@ void Memori::Redo(int n){
 }
 
 void Memori::ShowMem(int n){
-	for (int i=UndoArray.size()-n; i<UndoArray.size()+1; i++){
-		cout << UndoArray[i];
+	for (int i=UndoArray.size()-n; i<UndoArray.size(); i++){
+		cout << UndoArray[i] << endl;
 	}
 }
 
