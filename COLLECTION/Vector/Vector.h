@@ -9,26 +9,53 @@ using namespace std;
 template <class T>
 class Vector{
 public:
-	//CTOR-CCTOR-DTOR
-	Vector();				//ctor
-	Vector(const Vector&);	//cctor
-	virtual ~Vector();		//dtor
+	/**
+    	*Konstruktor tanpa parameter
+    	*/
+	Vector();				
+	/**
+    	*Copy Konstruktor 
+    	*/
+	Vector(const Vector&);
+	/**
+    	*destruktor
+	 */
+	virtual ~Vector();		
 
-	//SERVICES
+	/**
+    	*mengembalikan nilai ukuran stack
+	 */
 	int size();
+	/**
+    	*I.S. inisialisasi dengan nilai sembarang
+    	*F.S. Elemen x disisipkan pada elemen terakhir stack 
+	 */
 	void push_back(T x);
+	
+	/**
+    	*I.S. vektor tidak boleh kosong
+    	*F.S. Elemen terakhir vektor dibuang 
+	 */
 	void pop_back();
+	/**
+    	*I.S. vektor tidak kosong
+    	*F.S. seluruh memori vektor dihapus
+	 */
 	void clear();
 
-	//OPERATOR & MEMORY MANAGEMENT
+	/**
+    	*operator=
+	 */
 	Vector<T>& operator=(const Vector&);
+	
+	
 	T& operator[](const int idx) const;
 	void reserve(int newCapacity);
 	
 private:
-	int _size;
-	int capacity;
-	T* data;
+	int _size; /*! ukuran vektor */
+	int capacity; /*! kapasitas vektor*/
+	T* data; /*! elemen vektor*/
 };
 
 template <class T>
