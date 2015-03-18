@@ -13,16 +13,16 @@ public:
 	Stack();				//ctor default
 	Stack(int);				//ctor dengan parameter
 	Stack(const Stack&);	//cctor
-	virtual ~Stack();				//dtor
+	~Stack();				//dtor
 	
-	//SERVICES
+	//SERVICE
 	void push(T x);
 	void pop();
 	T top();
 
 	//PREDIKAT
-	int isEmpty() const;
-	int isFull() const;
+	int empty() const;
+	int full() const;
 
 private:
 	static const int defaultStackSize = 500;
@@ -60,7 +60,7 @@ Stack<T>::~Stack(){
 
 template <class T>
 void Stack<T>::push(T x){
-	if(isFull()){
+	if(full()){
 		throw (StackExp(STACK_FULL)); //raise exception if stack full
 	} else{
 		topStack++;
@@ -70,7 +70,7 @@ void Stack<T>::push(T x){
 
 template <class T>
 void Stack<T>::pop(){
-	if(isEmpty()){
+	if(empty()){
 		throw (StackExp(STACK_EMPTY)); //raise exception if stack empty
 	} else{
 		topStack--;
@@ -83,12 +83,12 @@ T Stack<T>::top(){
 }
 
 template <class T>
-int Stack<T>::isFull() const{
+int Stack<T>::full() const{
 	return topStack == size-1;
 }
 
 template <class T>
-int Stack<T>::isEmpty() const{
+int Stack<T>::empty() const{
 	return topStack == -1;
 }
 

@@ -25,5 +25,4 @@ private:
 	const int msg_id;
 };
 
-
 #endif
