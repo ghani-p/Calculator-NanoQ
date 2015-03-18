@@ -49,48 +49,52 @@ int main()
 		cout << "> ";
 		getline(cin,s);
 		if (s != "") {
-			std::transform(s.begin(), s.end(), s.begin(), ::toupper);
-			strSplit(s,' ',sp);
-			if (sp[0].compare("UNDO") == 0) {
-				cout << sp[1] << endl;
-				cmd.UNDO(atoi(sp[1].c_str()));
-			} else if (sp[0].compare("REDO") == 0) {
-				cmd.REDO(atoi(sp[1].c_str()));
-			} else if (sp[0].compare("SHOWMEM") == 0) {
-				cmd.SHOWMEM(atoi(sp[1].c_str()));
-			} else if (sp[0].compare("SHOWALL") == 0) {
-				cmd.SHOWALL();
-			} else if (sp[0].compare("SETTING") == 0) {
-				cmd.SETTING();
-			} else if (sp[0].compare("SAVE") == 0) {
-				string nf;
-				cout << "Masukkan nama file: "; cin >> nf;
-				cmd.SAVE(nf);
-			} else if (sp[0].compare("EXIT") == 0) {
-				cmd.EXIT();
-			} else {
-				if (cmd.getEkspresi() == "POSTFIX") {
-					Postfix E(s, cmd.getBilangan());
-					cout << "Hasil = "; E.printHasil(); cout << endl;
-					string mem = E.getEkspresi();
-					mem += " = ";
-					mem += E.getHasil()->getNilai() + '0';
-					cmd.getMemori().Add(mem);
-				} else if (cmd.getEkspresi() == "PREFIX") {
-					Prefix E(s, cmd.getBilangan());
-					cout << "Hasil = "; E.printHasil(); cout << endl;
-					string mem = E.getEkspresi();
-					mem += " = ";
-					mem += E.getHasil()->getNilai() + '0';
-					cmd.getMemori().Add(mem);
-				} else if (cmd.getEkspresi() == "INFIX") {
-					Infix E(s, cmd.getBilangan());
-					cout << "Hasil = "; E.printHasil(); cout << endl;
-					string mem = E.getEkspresi();
-					mem += " = ";
-					mem += E.getHasil()->getNilai() + '0';
-					cmd.getMemori().Add(mem);
+			try{
+				std::transform(s.begin(), s.end(), s.begin(), ::toupper);
+				strSplit(s,' ',sp);
+				if (sp[0].compare("UNDO") == 0) {
+					cmd.UNDO(atoi(sp[1].c_str()));
+				} else if (sp[0].compare("REDO") == 0) {
+					cmd.REDO(atoi(sp[1].c_str()));
+				} else if (sp[0].compare("SHOWMEM") == 0) {
+					cmd.SHOWMEM(atoi(sp[1].c_str()));
+				} else if (sp[0].compare("SHOWALL") == 0) {
+					cmd.SHOWALL();
+				} else if (sp[0].compare("SETTING") == 0) {
+					cmd.SETTING();
+				} else if (sp[0].compare("SAVE") == 0) {
+					string nf;
+					cout << "Masukkan nama file: "; cin >> nf;
+					cmd.SAVE(nf);
+				} else if (sp[0].compare("EXIT") == 0) {
+					cmd.EXIT();
+				} else {
+
+					if (cmd.getEkspresi() == "POSTFIX") {
+						Postfix E(s, cmd.getBilangan());
+						cout << "Hasil = "; E.printHasil(); cout << endl;
+						string mem = E.getEkspresi();
+						mem += " = ";
+						mem += E.getHasil()->getNilai() + '0';
+						cmd.getMemori().Add(mem);
+					} else if (cmd.getEkspresi() == "PREFIX") {
+						Prefix E(s, cmd.getBilangan());
+						cout << "Hasil = "; E.printHasil(); cout << endl;
+						string mem = E.getEkspresi();
+						mem += " = ";
+						mem += E.getHasil()->getNilai() + '0';
+						cmd.getMemori().Add(mem);
+					} else if (cmd.getEkspresi() == "INFIX") {
+						Infix E(s, cmd.getBilangan());
+						cout << "Hasil = "; E.printHasil(); cout << endl;
+						string mem = E.getEkspresi();
+						mem += " = ";
+						mem += E.getHasil()->getNilai() + '0';
+						cmd.getMemori().Add(mem);
+					}
 				}
+			} catch(const VectorExp&){
+					cout << "Memori tidak dapat diakses" << endl;			
 			}
 		}
 	}

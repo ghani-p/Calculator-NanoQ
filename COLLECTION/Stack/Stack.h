@@ -9,26 +9,57 @@ using namespace std;
 template <class T>
 class Stack{
 public:
-	//CTOR-CCTOR-DTOR
-	Stack();				//ctor default
-	Stack(int);				//ctor dengan parameter
-	Stack(const Stack&);	//cctor
-	~Stack();				//dtor
+	/**
+    	*Konstruktor default tanpa parameter
+    	*/
+	Stack();
+	/**
+    	*Konstruktor default dengan parameter
+    	*/
+	Stack(int);	
+	/**
+    	*Copy Konstruktor
+    	*/
+	Stack(const Stack&);
+	/**
+    	*Destruktor
+    	*/
+	~Stack();			
 	
-	//SERVICE
+	/**
+    	*I.S. Stack tidak penuh
+    	* F.S Stack ditambahkan elemen x, Top bertambah 1
+    	* @param x untuk parameter pertama
+    	*/
 	void push(T x);
+	
+	/**
+    	*I.S. Stack tidak kosong
+    	* F.S Stack berkurang 1 elemen. Top berkurang 1
+    	*/
 	void pop();
+	
+	/**
+    	*mengembalikan nilai Top
+    	*/
 	T top();
 
-	//PREDIKAT
+	/**
+    	*mengembalikan true jika stack kosong
+    	* mengembalikan false jika stack tidak kosong
+    	*/
 	int empty() const;
+	/**
+    	*mengembalikan true jika stack penuh
+    	* mengembalikan false jika stack tidak penuh
+    	*/
 	int full() const;
 
 private:
-	static const int defaultStackSize = 500;
-	const int size;
-	int topStack;
-	T* data;
+	static const int defaultStackSize = 500; /*!< nilai default ukuran stack*/
+	const int size; /*!< ukuran stack */
+	int topStack; /*!< alamat top dari stack*/
+	T* data; /*!< elemen stack */
 
 };
 
