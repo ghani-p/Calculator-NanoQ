@@ -53,14 +53,14 @@ void Infix::convertToPost() {
 
 	int j=0;
 	for (int i = 0; i < post.size(); i++) {
-		if (!(post[i].compare("+") == 0 || post[i].compare("-") == 0 || post[i].compare("*") == 0 || post[i].compare("/") == 0 || post[i].compare("div") == 0 || post[i].compare("mod") == 0) && post[i].compare("(") != 0 && post[i].compare(")") != 0) { 
+		if (!(post[i].compare("+") == 0 || post[i].compare("-") == 0 || post[i].compare("*") == 0 || post[i].compare("/") == 0 || post[i].compare("div") == 0 || post[i].compare("mod") == 0 || post[i].compare("and") == 0 || post[i].compare("or") == 0 || post[i].compare("xor") == 0)  && post[i].compare("(") != 0 && post[i].compare(")") != 0) { 
 		//implement other operators here
 			this->ekspresi += post[i] + " ";
 			j++;
-		} else if (post[i].compare("+") == 0 || post[i].compare("-") == 0 || post[i].compare("*") == 0 || post[i].compare("/") == 0 || post[i].compare("div") == 0 || post[i].compare("mod") == 0) {
+		} else if (post[i].compare("+") == 0 || post[i].compare("-") == 0 || post[i].compare("*") == 0 || post[i].compare("/") == 0 || post[i].compare("div") == 0 || post[i].compare("mod") == 0 ||  post[i].compare("or") == 0 || post[i].compare("xor") == 0) {
 			//is operator
-			while (!stk.empty() && stk.top().compare("(") != 0 && (((stk.top().compare("*") == 0 || stk.top().compare("/") == 0 || stk.top().compare("div") == 0 || stk.top().compare("mod") == 0) && (post[i].compare("+") == 0 || post[i].compare("-") == 0))
-				|| !((stk.top().compare("+") == 0 || stk.top().compare("-") == 0) && (post[i].compare("*") == 0 || post[i].compare("/") == 0 || post[i].compare("div") == 0 || post[i].compare("mod") == 0)))) {
+			while (!stk.empty() && stk.top().compare("(") != 0 && (((stk.top().compare("*") == 0 || stk.top().compare("/") == 0 || stk.top().compare("div") == 0 || stk.top().compare("mod") == 0 || stk.top().compare("and") == 0) && (post[i].compare("+") == 0 || post[i].compare("-") == 0  || post[i].compare("or") == 0 || post[i].compare("xor") == 0))
+				|| !((stk.top().compare("+") == 0 || stk.top().compare("-") == 0 || stk.top().compare("or") == 0 || stk.top().compare("xor") == 0) && (post[i].compare("*") == 0 || post[i].compare("/") == 0 || post[i].compare("div") == 0 || post[i].compare("mod") == 0 || post[i].compare("and") == 0)))) {
 				this->ekspresi += stk.top() + " ";
 				j++;
 				stk.pop();
