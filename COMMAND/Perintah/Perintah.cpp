@@ -37,7 +37,7 @@ void Perintah::SAVE(string file){
 
 void Perintah::SETTING(){
 	string input = "";
-	repeat {
+	do {
 		if(input=="PREFIX" || input=="INFIX" || input=="POSTFIX"){
 			ekspresi = input;
 			cout << "  Ekspresi telah berhasil diset!" << endl;
@@ -48,7 +48,7 @@ void Perintah::SETTING(){
 		cout << "  >>> ";
 		cin >> input;
 		std::transform(input.begin(), input.end(), input.begin(), ::toupper);
-	} until (input != "APPLY");
+	} while (input != "APPLY");
 }
 
 void Perintah::EXIT(){
