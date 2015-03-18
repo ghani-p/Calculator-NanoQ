@@ -8,7 +8,7 @@
 #include<string>
 
 using namespace std;
-/*! Sebuah kelas abstrak Operand */
+/*! Sebuah kelas Infix turunan kelas Postfix */
 class Infix : public Postfix {
 private:
 
