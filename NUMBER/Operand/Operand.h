@@ -40,6 +40,13 @@ public:
     * @param O untuk parameter pertama
     */
     virtual void operator%(const Operand& O);
+    
+    /**
+    *fungsi prosedure div operand
+    * assert untuk operatordiv pada bilangan logika
+    * @param O untuk parameter pertama
+    */
+    virtual void operatorDiv(const Operand& O);
 
     /**
     *fungsi prosedure not operand
