@@ -28,14 +28,14 @@ void Logika::operatornot(){
         nilai=0;
     else nilai=1;
 }
-void Logika::operatorand(const Logika& O){
+void Logika::operatorand(const Operand& O){
     nilai*=O.getNilai();
 }
-void Logika::operatoror(const Logika& O){
+void Logika::operatoror(const Operand& O){
     nilai+=O.getNilai();
     if(nilai==2) nilai=1;
 }
-void Logika::operatorxor(const Logika& O){
+void Logika::operatorxor(const Operand& O){
     if(nilai==O.getNilai())
         nilai=0;
     else nilai=1;
