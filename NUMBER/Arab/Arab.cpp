@@ -47,3 +47,7 @@ void Arab::operator/(const Operand& A){
 void Arab::operator%(const Operand& A){
     nilai%=A.getNilai();
 }
+void Arab::operatorDiv(const Operand& A){
+    assert(A.getNilai()!=0);
+    nilai/=A.getNilai();
+}
