@@ -4,6 +4,8 @@ run:
 
 build:
 	g++ calc.cpp \
+	COLLECTION/Stack/StackExp.cpp \
+	COLLECTION/Vector/VectorExp.cpp \
 	EXPRESSION/Postfix/Postfix.cpp EXPRESSION/Prefix/Prefix.cpp EXPRESSION/Infix/Infix.cpp \
 	MEMORY/Memori/Memori.cpp COMMAND/Perintah/Perintah.cpp \
 	NUMBER/Arab/Arab.cpp NUMBER/Logika/Logika.cpp \

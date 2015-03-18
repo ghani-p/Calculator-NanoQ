@@ -35,6 +35,7 @@ void Perintah::SETTING(){
 	string input;
 	cin >> input;
 	while(input != "APPLY"){
+		cout << (input != "APPLY") << endl;
 		if(input=="PREFIX" || input=="INFIX" || input=="POSTFIX"){
 			ekspresi = input;
 			cout << "Expresi telah berhasil diset!" << endl;

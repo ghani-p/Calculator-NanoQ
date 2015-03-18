@@ -9,8 +9,6 @@ Memori::Memori(){
 }
 
 Memori::Memori(const Memori& m){
-	UndoArray.size() = m.UndoArray.size();
-	RedoArray.size() = m.RedoArray.size();
 	int i;
 	for(i=0; i<UndoArray.size(); i++){
 		UndoArray.push_back(m.UndoArray[i]);

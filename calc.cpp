@@ -5,13 +5,13 @@
 #include "./COLLECTION/Vector/Vector.h"
 #include "./MEMORY/Memori/Memori.h"
 #include "./COMMAND/Perintah/Perintah.h"
-/*#include "./EXPRESSION/Postfix/Postfix.h"
+#include "./EXPRESSION/Postfix/Postfix.h"
 #include "./EXPRESSION/Prefix/Prefix.h"
 #include "./EXPRESSION/Infix/Infix.h"
 #include "./NUMBER/Arab/Arab.h"
 #include "./NUMBER/Logika/Logika.h"
 #include "./NUMBER/Operand/Operand.h"
-#include "./NUMBER/Romawi/Romawi.h"*/
+#include "./NUMBER/Romawi/Romawi.h"
 using namespace std;
 
 void strSplit(string in, char delimiter, Vector<string>& strings) {
@@ -25,7 +25,7 @@ void strSplit(string in, char delimiter, Vector<string>& strings) {
 		}
 	}
 	if (in.length() > 0)
-		strings.push_back(in.substr(x, in.length()-1));
+		strings.push_back(in.substr(x, in.length()));
 }
 
 int main()
@@ -34,26 +34,31 @@ int main()
 	Perintah cmd;
 	string s = "";
 	Vector<string> sp;
-	while (!s.compare("EXIT")) {
-		cin >> s;
-		std::transform(s.begin(), s.end(), s.begin(), ::tolower);
+	while (1) {
+		getline(cin,s);
+		std::transform(s.begin(), s.end(), s.begin(), ::toupper);
 		strSplit(s,' ',sp);
-		if (!sp[0].compare("undo")) {
+		cout << sp[0] << endl;
+		if (sp[0].compare("UNDO") == 0) {
 			cmd.UNDO(atoi(sp[1].c_str()));
-		} else if (!sp[0].compare("redo")) {
+		} else if (sp[0].compare("REDO") == 0) {
 			cmd.REDO(atoi(sp[1].c_str()));
-		} else if (!sp[0].compare("showmem")) {
+		} else if (sp[0].compare("SHOWMEM") == 0) {
 			cmd.SHOWMEM(atoi(sp[1].c_str()));
-		} else if (!sp[0].compare("showall")) {
+		} else if (sp[0].compare("SHOWALL") == 0) {
 			cmd.SHOWALL();
-		} else if (!sp[0].compare("setting")) {
+		} else if (sp[0].compare("SETTING") == 0) {
 			cmd.SETTING();
-		} else if (!sp[0].compare("save")) {
+		} else if (sp[0].compare("SAVE") == 0) {
 			string nf;
 			cout << "Masukkan nama file: "; cin >> nf;
 			cmd.SAVE(nf);
-		} else if (!sp[0].compare("exit")) {
+		} else if (sp[0].compare("EXIT") == 0) {
 			cmd.EXIT();
+		} else {
+			if (cmd.getEkspresi() == "POSTFIX") {
+				
+			}
 		}
 	}
 
