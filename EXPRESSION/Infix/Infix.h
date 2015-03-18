@@ -8,23 +8,41 @@
 #include<string>
 
 using namespace std;
-
+/*! Sebuah kelas abstrak Operand */
 class Infix : public Postfix {
 private:
-	string ekspresiP; //ekspresi dalam bentuk infix
-	void convertToPost(); //melakukan konversi ekspresi infix ke postfix dan mengupdate string ekspresi (Postfix)
+
+	string ekspresiP; /*!< ekspresi dalam bentuk infix */
+	void convertToPost(); /*!<melakukan konversi ekspresi infix ke postfix dan mengupdate string ekspresi (Postfix) */
 
 public:
-	Infix(string _ekspresi, string _operandType); //default ctor
-	Infix(const Infix&); //cctor
-	Infix& operator=(const Infix&); //assign
-	virtual ~Infix(); //dtor
+	/**
+    	*Konstruktor default
+    	*/
+	Infix(string _ekspresi, string _operandType); 
+	/**
+    	*Copy Konstruktor 
+    	*/
+	Infix(const Infix&);
+	/**
+    	*Operator=
+    	*/
+	Infix& operator=(const Infix&); 
+	/**
+    	*Destruktor
+    	*/
+	virtual ~Infix();
 
-	//GETTER
-	virtual string getEkspresi(); //mengembalikan string ekspresi infix
+	/**
+	 *getter
+	 * mengembalikan string ekspresi infix
+    	*/
+	virtual string getEkspresi(); 
 
-	//OUTPUT
-	virtual void printEkspresi(); //mencetak string ekspresi infix ke layar
+	/**
+	* mencetak string ekspresi infix ke layar
+    	*/
+	virtual void printEkspresi(); 
 };
 
 #endif
