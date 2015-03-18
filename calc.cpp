@@ -52,6 +52,7 @@ int main()
 			std::transform(s.begin(), s.end(), s.begin(), ::toupper);
 			strSplit(s,' ',sp);
 			if (sp[0].compare("UNDO") == 0) {
+				cout << sp[1] << endl;
 				cmd.UNDO(atoi(sp[1].c_str()));
 			} else if (sp[0].compare("REDO") == 0) {
 				cmd.REDO(atoi(sp[1].c_str()));
@@ -72,16 +73,22 @@ int main()
 					Postfix E(s, cmd.getBilangan());
 					cout << "Hasil = "; E.printHasil(); cout << endl;
 					string mem = E.getEkspresi();
+					mem += " = ";
+					mem += E.getHasil()->getNilai() + '0';
 					cmd.getMemori().Add(mem);
 				} else if (cmd.getEkspresi() == "PREFIX") {
 					Prefix E(s, cmd.getBilangan());
 					cout << "Hasil = "; E.printHasil(); cout << endl;
 					string mem = E.getEkspresi();
+					mem += " = ";
+					mem += E.getHasil()->getNilai() + '0';
 					cmd.getMemori().Add(mem);
 				} else if (cmd.getEkspresi() == "INFIX") {
 					Infix E(s, cmd.getBilangan());
 					cout << "Hasil = "; E.printHasil(); cout << endl;
 					string mem = E.getEkspresi();
+					mem += " = ";
+					mem += E.getHasil()->getNilai() + '0';
 					cmd.getMemori().Add(mem);
 				}
 			}

@@ -89,7 +89,7 @@ void Postfix::Hitung() {
 		} else if (strings[i].compare("div") == 0) {
 			temp = tabEkspresi.top();
 			tabEkspresi.pop();
-			(*tabEkspresi.top()) / (*temp);
+			tabEkspresi.top()->operatorDiv(*temp);
 		} else if (strings[i].compare("mod") == 0) {
 			temp = tabEkspresi.top();
 			tabEkspresi.pop();
