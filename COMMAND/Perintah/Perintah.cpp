@@ -46,7 +46,7 @@ void Perintah::SETTING(){
 			cout << "  Bilangan telah berhasil diset!" << endl;
 		}
 		cout << "  >>> ";
-		cin >> input;
+		getline(cin,input);
 		std::transform(input.begin(), input.end(), input.begin(), ::toupper);
 	} while (input != "APPLY");
 }
