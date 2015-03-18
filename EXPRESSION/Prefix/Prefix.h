@@ -8,23 +8,41 @@
 #include <string>
 
 using namespace std;
-
+/*! Sebuah kelas Prefix turunan kelas Postfix */
 class Prefix : public Postfix {
 private:
-	string ekspresiP; //ekspresi dalam bentuk prefix
-	void convertToPost(); //melakukan konversi ekspresi prefix ke postfix dan mengupdate string ekspresi (Postfix)
+	string ekspresiP; /*!ekspresi dalam bentuk prefix*/
+	void convertToPost(); /*!melakukan konversi ekspresi prefix ke postfix dan mengupdate string ekspresi (Postfix)*/
 
 public:
-	Prefix(string _ekspresi, string operandType); //default ctor
-	Prefix(const Prefix&); //cctor
-	Prefix& operator=(const Prefix&); //assignment
-	virtual ~Prefix(); //dtor
+	/**
+    	*Konstruktor default
+    	*/
+	Prefix(string _ekspresi, string operandType); 
+	/**
+    	*Copy Konstruktor
+    	*/
+	Prefix(const Prefix&); 
+	/**
+	* operator=
+    	*/
+	Prefix& operator=(const Prefix&); 
+	/**
+	* Destruktor
+    	*/
+	virtual ~Prefix();
 
-	//GETTER
-	virtual string getEkspresi(); //mengembalikan string ekspresi prefix
+	/**
+	* getter
+    	*mengembalikan string ekspresi prefix
+    	*/
+	virtual string getEkspresi(); 
 
-	//OUTPUT
-	virtual void printEkspresi(); //mencetak string ekspresi prefix ke layar
+	/**
+	*output
+    	*mencetak string ekspresi prefix ke layar
+    	*/
+	virtual void printEkspresi(); 
 };
 
 #endif
