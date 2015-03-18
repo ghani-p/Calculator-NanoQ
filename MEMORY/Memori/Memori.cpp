@@ -51,14 +51,14 @@ void Memori::Redo(int n){
 }
 
 void Memori::ShowMem(int n){
-	for (int i=UndoArray.size()-n; i<UndoArray.size()+1; i++){
-		cout << UndoArray[i];
+	for (int i=UndoArray.size()-n; i<UndoArray.size(); i++){
+		cout << UndoArray[i] << endl;
 	}
 }
 
 void Memori::ShowAll(){
-	for (int i=0; i<UndoArray.size()+1; i++){
-		cout << UndoArray[i];
+	for (int i=0; i<UndoArray.size(); i++){
+		cout << UndoArray[i] << endl;
 	}
 }
 
