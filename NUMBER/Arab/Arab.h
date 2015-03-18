@@ -17,8 +17,8 @@ public:
     
     /**
     *Konstruktor dengan parameter
-    *I.S. string input berupa string representasi integer
-    *F.S. menyimpan kedalam variabel nilai nilai integer dari string yang di input
+    *string input berupa string representasi integer
+    *menyimpan kedalam variabel nilai nilai integer dari string yang di input
     *@param a untuk parameter pertama
     */
     Arab(string a);
@@ -36,7 +36,7 @@ public:
     
     /**
     *Operator=
-    *@param L untuk parameter pertama
+    *@param A untuk parameter pertama
     */
     Arab& operator=(const Arab& A);
     
