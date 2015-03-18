@@ -57,6 +57,7 @@ void Romawi::ConvertToArab(string R){
     int Sum=0;
     CT=Roman[0];
     for(int i=R.size()-1;i>=0;i--){
+        assert(Roman.find(R[i]) < R.size());
         if(Roman.find(CT)>Roman.find(R[i])){
             Sum-=value[Roman.find(R[i])];
         }
