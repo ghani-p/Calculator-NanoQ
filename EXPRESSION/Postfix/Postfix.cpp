@@ -121,19 +121,22 @@ void Postfix::Hitung() {
 	hasil = tabEkspresi.top();
 }
 
+Operand* Postfix::getHasil() {
+	return hasil;
+}
 
 string Postfix::getEkspresi() { return ekspresi; } //mengembalikan string ekspresi postfix
 
 
-void Postfix::printEkspresi() { cout<<getEkspresi()<<endl;} //mencetak string ekspresi ke layar
+void Postfix::printEkspresi() { cout<<getEkspresi();} //mencetak string ekspresi ke layar
 
 
 void Postfix::printHasil() {
 //mencetak nilai Operand hasil ke layar
 	if (operandType == "ROMAWI") {
 		Romawi *R = (Romawi *) hasil;
-		cout<<R->getRomawi()<<endl;
+		cout << R->getRomawi();
 	} else {
-		cout<<hasil->getNilai()<<endl;
+		cout << hasil->getNilai();
 	}
 }

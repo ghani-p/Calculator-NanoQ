@@ -49,7 +49,7 @@ void Infix::convertToPost() {
 		}
 	}
 	if (ekspresiP.length() > 0)
-		post.push_back(ekspresiP.substr(x,ekspresiP.length()-1));
+		post.push_back(ekspresiP.substr(x,ekspresiP.length()));
 
 	int j=0;
 	for (int i = 0; i < post.size(); i++) {
@@ -91,4 +91,4 @@ void Infix::convertToPost() {
 
 string Infix::getEkspresi() { return this->ekspresiP; }  //mengembalikan string ekspresi infix
 
-void Infix::printEkspresi() { cout<<this->getEkspresi()<<endl;} //mencetak string ekspresi infix ke layar
+void Infix::printEkspresi() { cout<<this->getEkspresi();} //mencetak string ekspresi infix ke layar

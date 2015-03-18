@@ -38,7 +38,6 @@ int main()
 		getline(cin,s);
 		std::transform(s.begin(), s.end(), s.begin(), ::toupper);
 		strSplit(s,' ',sp);
-		cout << sp[0] << endl;
 		if (sp[0].compare("UNDO") == 0) {
 			cmd.UNDO(atoi(sp[1].c_str()));
 		} else if (sp[0].compare("REDO") == 0) {
@@ -57,7 +56,14 @@ int main()
 			cmd.EXIT();
 		} else {
 			if (cmd.getEkspresi() == "POSTFIX") {
-				
+				Postfix E(s, cmd.getBilangan());
+				cout << "Hasil = "; E.printHasil();
+			} else if (cmd.getEkspresi() == "PREFIX") {
+				Prefix E(s, cmd.getBilangan());
+				cout << "Hasil = "; E.printHasil();
+			} else if (cmd.getEkspresi() == "INFIX") {
+				Infix E(s, cmd.getBilangan());
+				cout << "Hasil = "; E.printHasil();
 			}
 		}
 	}

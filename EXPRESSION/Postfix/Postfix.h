@@ -25,6 +25,7 @@ public:
 
 	//GETTER
 	virtual string getEkspresi(); //mengembalikan string ekspresi
+	virtual Operand* getHasil();
 
 	//OUTPUT
 	virtual void printEkspresi(); //mencetak string ekspresi ke layar

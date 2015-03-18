@@ -21,7 +21,7 @@ public:
 	void EXIT();
 	
 	//GETTER
-	string getExpresi();
+	string getEkspresi();
 	string getBilangan();
 
 private:

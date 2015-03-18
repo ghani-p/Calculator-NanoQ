@@ -73,4 +73,4 @@ void Prefix::convertToPost() { //melakukan konversi ekspresi prefix ke postfix d
 
 string Prefix::getEkspresi() { return this->ekspresiP; } //mengembalikan string ekspresi prefix
 
-void Prefix::printEkspresi() { cout<<this->getEkspresi()<<endl;} //mencetak string ekspresi prefix ke layar
+void Prefix::printEkspresi() { cout<<this->getEkspresi();} //mencetak string ekspresi prefix ke layar

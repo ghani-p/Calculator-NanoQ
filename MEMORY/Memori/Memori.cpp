@@ -21,6 +21,7 @@ Memori::Memori(const Memori& m){
 }
 
 Memori::~Memori(){
+	
 }
 
 void Memori::Undo(int n){
