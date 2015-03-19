@@ -1,14 +1,16 @@
 /* File		: Logika.cpp						*/
 /* Author	: Fiqie Ulya Sidiastahta (13514602)	*/
 #include "Logika.h"
+#include <iostream>
 
 Logika::Logika(){
     nilai=0;
 }
 Logika::Logika(string L){
     //precondition
-    assert(L.compare("true")==0 || L.compare("false")==0 || L.compare("0")==0 || L.compare("1")==0 || L.compare("notfalse")==0||L.compare("nottrue")==0||L.compare("not0")==0||L.compare("not1")==0);
-    if((L.compare("true")==0)||(L.compare("1")==0)||(L.compare("notfalse")==0)){
+    cout << "a" << L << "a" << endl;
+    assert(L.compare("TRUE")==0 || L.compare("FALSE")==0 || L.compare("0")==0 || L.compare("1")==0 || L.compare("NOTFALSE")==0||L.compare("NOTTRUE")==0||L.compare("NOT0")==0||L.compare("NOT1")==0);
+    if((L.compare("TRUE")==0)||(L.compare("1")==0)||(L.compare("NOTFALSE")==0)){
         nilai=1;
     }else nilai=0;
 

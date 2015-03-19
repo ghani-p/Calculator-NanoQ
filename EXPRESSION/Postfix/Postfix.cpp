@@ -61,6 +61,8 @@ void Postfix::Hitung() {
 	if (ekspresi.length() > 0)
 		strings.push_back(ekspresi.substr(x, ekspresi.length()));
 
+	
+
 	for (int i=0;i<strings.size();i++) {
 		if (strings[i].compare("+") == 0) {
 			temp = tabEkspresi.top();
@@ -79,23 +81,23 @@ void Postfix::Hitung() {
 			tabEkspresi.pop();
 			(*tabEkspresi.top()) / (*temp);
 
-		} else if (strings[i].compare("div") == 0) {
+		} else if (strings[i].compare("DIV") == 0) {
 			temp = tabEkspresi.top();
 			tabEkspresi.pop();
 			tabEkspresi.top()->operatorDiv(*temp);
-		} else if (strings[i].compare("mod") == 0) {
+		} else if (strings[i].compare("MOD") == 0) {
 			temp = tabEkspresi.top();
 			tabEkspresi.pop();
 			(*tabEkspresi.top()) % (*temp);
-		} else if (strings[i].compare("and") == 0) {
+		} else if (strings[i].compare("AND") == 0) {
 			temp = tabEkspresi.top();
 			tabEkspresi.pop();
 			(*tabEkspresi.top()).operatorand((*temp));
-		} else if (strings[i].compare("or") == 0) {
+		} else if (strings[i].compare("OR") == 0) {
 			temp = tabEkspresi.top();
 			tabEkspresi.pop();
 			(*tabEkspresi.top()).operatoror((*temp));
-		} else if (strings[i].compare("xor") == 0) {
+		} else if (strings[i].compare("XOR") == 0) {
 			temp = tabEkspresi.top();
 			tabEkspresi.pop();
 			(*tabEkspresi.top()).operatorxor((*temp));

@@ -1,6 +1,7 @@
 #include <iostream>
 #include <algorithm>
 #include <string>
+#include <sstream>
 #include "./COLLECTION/Stack/Stack.h"
 #include "./COLLECTION/Vector/Vector.h"
 #include "./MEMORY/Memori/Memori.h"
@@ -60,41 +61,56 @@ int main()
 					cmd.UNDO(atoi(sp[1].c_str()));
 				} else if (sp[0].compare("REDO") == 0) {
 					cmd.REDO(atoi(sp[1].c_str()));
-				} else if (sp[0].compare("SHOWMEM") == 0) {
-					cmd.SHOWMEM(atoi(sp[1].c_str()));
-				} else if (sp[0].compare("SHOWALL") == 0) {
-					cmd.SHOWALL();
-				} else if (sp[0].compare("SETTING") == 0) {
-					cmd.SETTING();
-				} else if (sp[0].compare("SAVE") == 0) {
-					string nf;
-					cout << "Masukkan nama file: "; cin >> nf;
-					cmd.SAVE(nf);
-				} else if (sp[0].compare("EXIT") == 0) {
-					cmd.EXIT();
+				} else if (sp[0] == "SHOWMEM" || sp[0] == "SHOWALL" || sp[0] == "SETTING" || sp[0] == "SAVE" || sp[0] == "EXIT") {
+					if (sp[0].compare("SHOWMEM") == 0) {
+						cmd.SHOWMEM(atoi(sp[1].c_str()));
+					} else if (sp[0].compare("SHOWALL") == 0) {
+						cmd.SHOWALL();
+					} else if (sp[0].compare("SETTING") == 0) {
+						cmd.SETTING();
+					} else if (sp[0].compare("SAVE") == 0) {
+						cmd.SAVE(sp[1]);
+					} else { //if (sp[0].compare("EXIT") == 0) {
+						cmd.EXIT();
+					}
+					cmd.getMemori().Add(sp[0]);
 				} else {
-
 					if (cmd.getEkspresi() == "POSTFIX") {
 						Postfix E(s, cmd.getBilangan());
 						cout << "Hasil = "; E.printHasil(); cout << endl;
-						string mem = E.getEkspresi();
-						mem += " = ";
-						mem += E.getHasil()->getNilai() + '0';
-						cmd.getMemori().Add(mem);
+						stringstream mem;
+						mem << E.getEkspresi() << " = ";
+						if (cmd.getBilangan() == "ROMAWI") {
+							Romawi *R = (Romawi *) E.getHasil();
+							mem << R->getRomawi();
+						} else {
+							mem << E.getHasil()->getNilai();
+						}						
+						cmd.getMemori().Add(mem.str());
 					} else if (cmd.getEkspresi() == "PREFIX") {
 						Prefix E(s, cmd.getBilangan());
 						cout << "Hasil = "; E.printHasil(); cout << endl;
-						string mem = E.getEkspresi();
-						mem += " = ";
-						mem += E.getHasil()->getNilai() + '0';
-						cmd.getMemori().Add(mem);
+						stringstream mem;
+						mem << E.getEkspresi() << " = ";
+						if (cmd.getBilangan() == "ROMAWI") {
+							Romawi *R = (Romawi *) E.getHasil();
+							mem << R->getRomawi();
+						} else {
+							mem << E.getHasil()->getNilai();
+						}						
+						cmd.getMemori().Add(mem.str());
 					} else if (cmd.getEkspresi() == "INFIX") {
 						Infix E(s, cmd.getBilangan());
 						cout << "Hasil = "; E.printHasil(); cout << endl;
-						string mem = E.getEkspresi();
-						mem += " = ";
-						mem += E.getHasil()->getNilai() + '0';
-						cmd.getMemori().Add(mem);
+						stringstream mem;
+						mem << E.getEkspresi() << " = ";
+						if (cmd.getBilangan() == "ROMAWI") {
+							Romawi *R = (Romawi *) E.getHasil();
+							mem << R->getRomawi();
+						} else {
+							mem << E.getHasil()->getNilai();
+						}						
+						cmd.getMemori().Add(mem.str());
 					}
 				}
 			} catch(const VectorExp&){

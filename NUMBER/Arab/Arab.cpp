@@ -2,6 +2,7 @@
 /* Author	: Fiqie Ulya Sidiastahta (13514602)	*/
 #include "Arab.h"
 #include <cassert>
+#include <iostream>
 using namespace std;
 //ctor
 Arab::Arab(){
@@ -9,7 +10,7 @@ Arab::Arab(){
 }
 Arab::Arab(string a){
     for (int i = 0; i < a.length(); i++)
-        assert(a[i] >= '0' && a[i] <= '9');
+        assert((a[i] >= '0' && a[i] <= '9') || a[i] == '-' || a[i] == '+');
     
     nilai=atoi(a.c_str());
 }

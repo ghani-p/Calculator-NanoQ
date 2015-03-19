@@ -51,7 +51,7 @@ void Prefix::convertToPost() { //melakukan konversi ekspresi prefix ke postfix d
 
 	int j=0;
 	for (int i = 0; i < post.size(); i++) {
-		if (post[i].compare("+") == 0 || post[i].compare("-") == 0 || post[i].compare("*") == 0 || post[i].compare("/") == 0 || post[i].compare("div") == 0 || post[i].compare("mod") == 0 || post[i].compare("and") == 0 || post[i].compare("or") == 0 || post[i].compare("not") == 0 || post[i].compare("xor") == 0) { 
+		if (post[i].compare("+") == 0 || post[i].compare("-") == 0 || post[i].compare("*") == 0 || post[i].compare("/") == 0 || post[i].compare("DIV") == 0 || post[i].compare("MOD") == 0 || post[i].compare("AND") == 0 || post[i].compare("OR") == 0 || post[i].compare("XOR") == 0) { 
 			stk.push(post[i]);
 		} else {
 			this->ekspresi = this->ekspresi + post[i] + " ";
