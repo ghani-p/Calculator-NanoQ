@@ -1,13 +1,14 @@
 /* File		: Infix.cpp			*/
 /* Author	: Natan (13513070)	*/
 #include "Infix.h"
-#include <iostream>
+#include <algorithm>
 #include <string>
 
 using namespace std;
 
 Infix::Infix(string _ekspresi, string _operandType) : Postfix(_operandType) { //default ctor
 	ekspresiP = _ekspresi;
+	std::transform(ekspresiP.begin(), ekspresiP.end(), ekspresiP.begin(), ::toupper);
 	this->convertToPost();
 	this->Hitung();
 }

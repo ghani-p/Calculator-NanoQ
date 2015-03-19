@@ -12,11 +12,11 @@ int main(){
 	cout << " = "; pre.printHasil(); cout << endl;
 	assert(pre.getHasil()->getNilai() == 9);
 
-	Prefix pre1("+ / - * mod 5 4 5 -4 / 60 20 + 1 5", "ARAB");
+	Prefix pre1("+ / - * MOD 5 4 5 -4 / 60 20 + 1 5", "ARAB");
 	pre1.printEkspresi(); cout << " = "; pre1.printHasil(); cout << endl;
 	assert(pre1.getHasil()->getNilai() == 9);
 
-	Prefix pre2("or and true false or false true", "LOGIKA"); //1
+	Prefix pre2("OR AND TRUE FALSE OR FALSE TRUE", "LOGIKA"); //1
 	pre2.printEkspresi(); cout << " = "; pre2.printHasil(); cout << endl;
 	assert(pre2.getHasil()->getNilai() == 1);
 
@@ -25,7 +25,7 @@ int main(){
 	Romawi *R = (Romawi *) pre3.getHasil(); cout << endl;
 	assert(pre3.getHasil()->getNilai() == 6 && R->getRomawi().compare("VI") == 0);
  
-	Prefix pre4("+ - * mod 5 4 5 / 60 20 5", "ARAB"); //7
+	Prefix pre4("+ - * MOD 5 4 5 / 60 20 5", "ARAB"); //7
 	pre4.printEkspresi(); cout << " = "; pre4.printHasil(); cout << endl;
 	assert(pre4.getHasil()->getNilai() == 7);
 

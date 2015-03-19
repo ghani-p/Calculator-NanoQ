@@ -12,11 +12,11 @@ int main(){
 	cout << " = "; post.printHasil(); cout << endl;
 	assert(post.getHasil()->getNilai() == 9);
 
-	Postfix post1("5 4 mod 5 * -4 - 60 20 / 1 5 + / +", "ARAB");
+	Postfix post1("5 4 MOD 5 * -4 - 60 20 / 1 5 + / +", "ARAB");
 	post1.printEkspresi(); cout << " = "; post1.printHasil(); cout << endl;
 	assert(post1.getHasil()->getNilai() == 9);
 
-	Postfix post2("true false and false true or or", "LOGIKA"); //1
+	Postfix post2("TRUE FALSE AND FALSE TRUE OR OR", "LOGIKA"); //1
 	post2.printEkspresi(); cout << " = "; post2.printHasil(); cout << endl;
 	assert(post2.getHasil()->getNilai() == 1);
 
@@ -25,7 +25,7 @@ int main(){
 	Romawi *R = (Romawi *) post3.getHasil(); cout << endl;
 	assert(post3.getHasil()->getNilai() == 6 && R->getRomawi().compare("VI") == 0);
 
-	Postfix post4("5 4 mod 5 * 60 20 / - 5 +", "ARAB"); //7
+	Postfix post4("5 4 MOD 5 * 60 20 / - 5 +", "ARAB"); //7
 	post4.printEkspresi(); cout << " = "; post4.printHasil(); cout << endl;
 	assert(post4.getHasil()->getNilai() == 7);
 

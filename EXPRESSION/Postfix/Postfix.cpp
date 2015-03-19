@@ -1,7 +1,7 @@
 /* File		: Postfix.cpp			*/
 /* Author	: Natan (13513070)	*/
 #include "Postfix.h"
-#include <iostream>
+#include <algorithm>
 #include <string>
 using namespace std;
 
@@ -20,6 +20,7 @@ Postfix::Postfix(string _operandType) { //ctor
 
 Postfix::Postfix(string _ekspresi, string _operandType) { //ctor
 	ekspresi = _ekspresi;
+	std::transform(ekspresi.begin(), ekspresi.end(), ekspresi.begin(), ::toupper);
 	operandType = _operandType;
 	this->Hitung();
 }
@@ -61,7 +62,7 @@ void Postfix::Hitung() {
 	if (ekspresi.length() > 0)
 		strings.push_back(ekspresi.substr(x, ekspresi.length()));
 
-	
+
 
 	for (int i=0;i<strings.size();i++) {
 		if (strings[i].compare("+") == 0) {

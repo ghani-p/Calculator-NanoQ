@@ -11,11 +11,11 @@ int main(){
 	inf.printEkspresi(); cout << " = "; inf.printHasil(); cout << endl;
 	assert(inf.getHasil()->getNilai() == 9);
 
-	Infix inf1("( 5 mod 4 ) * 5 - -4 + ( 60 / 20 ) / ( 1 + 5 )", "ARAB");
+	Infix inf1("( 5 MOD 4 ) * 5 - -4 + ( 60 / 20 ) / ( 1 + 5 )", "ARAB");
 	inf1.printEkspresi(); cout << " = "; inf1.printHasil(); cout << endl;
 	assert(inf1.getHasil()->getNilai() == 9);
 
-	Infix inf2("( true and false ) or ( false or true )", "LOGIKA"); //1
+	Infix inf2("( true and FALSE ) OR ( FALSE OR TRUE )", "LOGIKA"); //1
 	inf2.printEkspresi(); cout << " = "; inf2.printHasil(); cout << endl;
 	assert(inf2.getHasil()->getNilai() == 1);
 
@@ -24,7 +24,7 @@ int main(){
 	Romawi *R = (Romawi *) inf3.getHasil(); cout << endl;
 	assert(inf3.getHasil()->getNilai() == 6 && R->getRomawi().compare("VI") == 0);
 
-	Infix inf4("( 5 mod 4 ) * 5 - 60 / 20 + 5", "ARAB"); //7
+	Infix inf4("( 5 MOD 4 ) * 5 - 60 / 20 + 5", "ARAB"); //7
 	inf4.printEkspresi(); cout << " = "; inf4.printHasil(); cout << endl;
 	assert(inf4.getHasil()->getNilai() == 7);
 

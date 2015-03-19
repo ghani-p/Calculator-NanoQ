@@ -1,13 +1,14 @@
 /* File		: Prefix.cpp			*/
 /* Author	: Natan (13513070)	*/
 #include "Prefix.h"
-#include <iostream>
+#include <algorithm>
 #include <string>
 
 using namespace std;
 
 Prefix::Prefix(string _ekspresi, string _operandType) : Postfix(_operandType) { //default ctor
 	ekspresiP = _ekspresi;
+	std::transform(ekspresiP.begin(), ekspresiP.end(), ekspresiP.begin(), ::toupper);
 	this->convertToPost();
 	this->Hitung();
 }

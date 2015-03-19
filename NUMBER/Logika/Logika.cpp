@@ -8,7 +8,6 @@ Logika::Logika(){
 }
 Logika::Logika(string L){
     //precondition
-    cout << "a" << L << "a" << endl;
     assert(L.compare("TRUE")==0 || L.compare("FALSE")==0 || L.compare("0")==0 || L.compare("1")==0 || L.compare("NOTFALSE")==0||L.compare("NOTTRUE")==0||L.compare("NOT0")==0||L.compare("NOT1")==0);
     if((L.compare("TRUE")==0)||(L.compare("1")==0)||(L.compare("NOTFALSE")==0)){
         nilai=1;
