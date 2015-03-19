@@ -65,41 +65,59 @@ void Postfix::Hitung() {
 
 	for (int i=0;i<strings.size();i++) {
 		if (strings[i].compare("+") == 0) {
+			assert(!tabEkspresi.empty());
 			temp = tabEkspresi.top();
 			tabEkspresi.pop();
+			assert(!tabEkspresi.empty());
 			tabEkspresi.top()->operator+(*temp);
 		} else if (strings[i].compare("-") == 0) {
+			assert(!tabEkspresi.empty());
 			temp = tabEkspresi.top();
 			tabEkspresi.pop();
+			assert(!tabEkspresi.empty());
 			(*tabEkspresi.top()) - (*temp);
 		} else if (strings[i].compare("*") == 0) {
+			assert(!tabEkspresi.empty());
 			temp = tabEkspresi.top();
 			tabEkspresi.pop();
+			assert(!tabEkspresi.empty());
 			(*tabEkspresi.top()) * (*temp);
 		} else if (strings[i].compare("/") == 0) {
+			assert(!tabEkspresi.empty());
 			temp = tabEkspresi.top();
 			tabEkspresi.pop();
+			assert(!tabEkspresi.empty());
 			(*tabEkspresi.top()) / (*temp);
 
 		} else if (strings[i].compare("DIV") == 0) {
+			assert(!tabEkspresi.empty());
 			temp = tabEkspresi.top();
 			tabEkspresi.pop();
+			assert(!tabEkspresi.empty());
 			tabEkspresi.top()->operatorDiv(*temp);
 		} else if (strings[i].compare("MOD") == 0) {
+			assert(!tabEkspresi.empty());
 			temp = tabEkspresi.top();
 			tabEkspresi.pop();
+			assert(!tabEkspresi.empty());
 			(*tabEkspresi.top()) % (*temp);
 		} else if (strings[i].compare("AND") == 0) {
+			assert(!tabEkspresi.empty());
 			temp = tabEkspresi.top();
 			tabEkspresi.pop();
+			assert(!tabEkspresi.empty());
 			(*tabEkspresi.top()).operatorand((*temp));
 		} else if (strings[i].compare("OR") == 0) {
+			assert(!tabEkspresi.empty());
 			temp = tabEkspresi.top();
 			tabEkspresi.pop();
+			assert(!tabEkspresi.empty());
 			(*tabEkspresi.top()).operatoror((*temp));
 		} else if (strings[i].compare("XOR") == 0) {
+			assert(!tabEkspresi.empty());
 			temp = tabEkspresi.top();
 			tabEkspresi.pop();
+			assert(!tabEkspresi.empty());
 			(*tabEkspresi.top()).operatorxor((*temp));
 		} else {
 			//Memasukkan operand ke dalam stack
@@ -113,6 +131,7 @@ void Postfix::Hitung() {
 			
 		}
 	}
+	assert(!tabEkspresi.empty());
 	hasil = tabEkspresi.top();
 }
 
