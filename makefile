@@ -77,7 +77,7 @@ testmemori:
 
 #NUMBER
 arab:
-	g++ NUMBER/Arab/UnitTest.cpp NmakUMBER/Arab/Arab.cpp \
+	g++ NUMBER/Arab/UnitTest.cpp NUMBER/Arab/Arab.cpp \
 	NUMBER/Operand/Operand.cpp \
 	-o NUMBER/Arab/TestArab
 testarab:
