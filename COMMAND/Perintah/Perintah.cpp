@@ -2,6 +2,8 @@
 /* Author	: Nitho Alif Ibadurrahman (13513072)	*/
 #include <iostream>
 #include <algorithm>
+#include <fstream>
+#include <ctime>
 #include <cstdlib>
 #include "Perintah.h"
 using namespace std;
@@ -32,6 +34,12 @@ void Perintah::SHOWALL(){
 
 
 void Perintah::SAVE(string file){
+	ofstream outputFile;
+	outputFile.open (file.c_str());
+	outputFile << "Time    : ";
+	time_t timev = time(NULL);
+	outputFile << asctime(localtime(&timev));
+	outputFile << "Setting : " << bilangan << " " << ekspresi << endl << endl;
 	memory.Save(file);
 }
 
