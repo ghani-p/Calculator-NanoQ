@@ -99,5 +99,6 @@ int Memori::isPerintah(string s){
 }
 
 void Memori::Add(string s){
+	RedoArray.clear();
 	UndoArray.push_back(s);
 }

@@ -2,6 +2,7 @@
 /* Author	: Natan (13513070)	*/
 #include "Postfix.h"
 #include <algorithm>
+#include <assert.h>
 #include <string>
 using namespace std;
 
@@ -61,8 +62,6 @@ void Postfix::Hitung() {
 	}
 	if (ekspresi.length() > 0)
 		strings.push_back(ekspresi.substr(x, ekspresi.length()));
-
-
 
 	for (int i=0;i<strings.size();i++) {
 		if (strings[i].compare("+") == 0) {
