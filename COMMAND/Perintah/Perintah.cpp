@@ -20,7 +20,6 @@ void Perintah::UNDO(int n){
 
 void Perintah::REDO(int n){
 	memory.Redo(n);
-	memory.ShowMem(1);
 	cout << "|| MEMORY || "; memory.ShowMem(1); cout << endl;
 }
 

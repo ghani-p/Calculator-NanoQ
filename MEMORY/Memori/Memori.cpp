@@ -27,10 +27,20 @@ Memori::~Memori(){
 void Memori::Undo(int n){
 	string val;
 	int count = 0;
+	while(isPerintah(UndoArray[UndoArray.size()-1])){
+		val = UndoArray[UndoArray.size()-1];
+		UndoArray.pop_back();
+		RedoArray.push_back(val);
+	}
 	while (count != n-1){
 		if(!isPerintah(UndoArray[UndoArray.size()-1])){
 			count++;
 		}
+		val = UndoArray[UndoArray.size()-1];
+		UndoArray.pop_back();
+		RedoArray.push_back(val);
+	}
+	while(isPerintah(UndoArray[UndoArray.size()-1])){
 		val = UndoArray[UndoArray.size()-1];
 		UndoArray.pop_back();
 		RedoArray.push_back(val);
@@ -41,6 +51,11 @@ void Memori::Undo(int n){
 void Memori::Redo(int n){
 	string val;
 	int count = 0;
+	while(isPerintah(RedoArray[RedoArray.size()-1])){
+		val = RedoArray[RedoArray.size()-1];
+		RedoArray.pop_back();
+		UndoArray.push_back(val);
+	}
 	while (count != n-1){
 		if(!isPerintah(RedoArray[RedoArray.size()-1])){
 			count++;
